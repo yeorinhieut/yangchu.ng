@@ -41,9 +41,11 @@
             background-color: transparent;
             border-color: #d1d5db;
             color: #9ca3af;
+            cursor: default;
+            user-select: none;
         }
         #busan-link:hover {
-            background-color: #f3f4f6;
+            background-color: transparent;
         }
     </style>
 </head>
@@ -56,7 +58,7 @@
         </div>
     </div>
     <div class="text-center mb-4">
-        <a id="busan-link" href="https://school.busanedu.net/yangjung-h/main.do" class="btn btn-sm btn-outline">양정고등학교(부산) 바로가기</a>
+        <span id="busan-link" class="btn btn-sm btn-outline">양정고등학교(부산) 바로가기</span>
     </div>
     <footer class="footer footer-center p-4 bg-base-200 text-base-content">
         <div>
@@ -76,7 +78,12 @@
         });
 
         busanLink.addEventListener('click', function(e) {
-            // 클릭 이벤트를 방해하지 않음
+            e.preventDefault();
+            const messages = [
+                "양정고등학교(부산)은 존재하지 않습니다.",
+                "양정고등학교(부산)을 왜 찾으시는거죠?",
+            ];
+            alert(messages[Math.floor(Math.random() * messages.length)]);
         });
     </script>
 </body>
