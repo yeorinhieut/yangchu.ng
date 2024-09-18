@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>양정고등학교</title>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #fe6f01;
+        }
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: white;
+            font-weight: 600;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .btn-custom {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            font-weight: 700;
+        }
+        .btn-custom:hover {
+            background-color: #e66400;
+            border-color: #e66400;
+        }
+        .main-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #busan-link {
+            transition: all 0.2s ease;
+            background-color: transparent;
+            border-color: #d1d5db;
+            color: #9ca3af;
+        }
+        #busan-link:hover {
+            background-color: #f3f4f6;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <h1 class="text-5xl font-bold mb-8" style="color: var(--primary-color);">양정고등학교</h1>
+        <div class="flex justify-center space-x-4 mb-6">
+            <a href="https://yangchung.sen.hs.kr" class="btn btn-sm btn-custom text-white">웹사이트</a>
+            <a href="https://yangchung.riroschool.kr" class="btn btn-sm btn-custom text-white">리로스쿨</a>
+        </div>
+    </div>
+    <div class="text-center mb-4">
+        <a id="busan-link" href="https://school.busanedu.net/yangjung-h/main.do" class="btn btn-sm btn-outline">양정고등학교(부산) 바로가기</a>
+    </div>
+    <footer class="footer footer-center p-4 bg-base-200 text-base-content">
+        <div>
+            <p class="font-semibold">2024 양정고등학교 파이썬부 <i class="far fa-copyright"></i></p>
+        </div>
+    </footer>
+
+    <script>
+        const busanLink = document.getElementById('busan-link');
+        
+        busanLink.addEventListener('mouseover', function(e) {
+            const x = Math.random() * (window.innerWidth - this.offsetWidth);
+            const y = Math.random() * (window.innerHeight - this.offsetHeight);
+            this.style.position = 'fixed';
+            this.style.left = `${x}px`;
+            this.style.top = `${y}px`;
+        });
+
+        busanLink.addEventListener('click', function(e) {
+            // 클릭 이벤트를 방해하지 않음
+        });
+    </script>
+</body>
+</html>
